@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Bike>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+ <div class="container p-3">
+     <div class="row pt-4">
+         <div class="col-6 text-lg-start align-text-top">
+             <h2>Bike List</h2>
+         </div>
+         <div class="col-6 text-end align-text-bottom">
+             <a asp-controller="Bike" asp-action="Create" class="btn btn-primary"><i class="bi bi-bicycle"></i> &nbsp; Create new Bike</a>
+         </div> 
+         <hr />
+     </div>
+     <br />
+         
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Manufacturer
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Front Tyre PSI
+                </th>
+                <th>
+                    Rear Tyre PSI
+                </th>
+                <th>
+                    Fork PSI
+                </th>
+                <th>
+                    Fork Rebound
+                </th>
+                <th>
+                   Shock PSI
+                </th>
+                <th>
+                    Shock Rebound
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+                    Image
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>
+                        @obj.Manufacturer
+                    </td>
+                    <td>
+                        @obj.Model
+                    </td>
+                    <td>
+                        @obj.FrontTyrePSI
+                    </td>
+                    <td>
+                        @obj.RearTyrePSI
+                    </td>
+                    <td>
+                        @obj.ForkPSI
+                    </td>
+                    <td>
+                        @obj.ForkRebound
+                    </td>
+                    <td>
+                        @obj.ShockPSI
+                    </td>
+                    <td>
+                        @obj.ShockRebound
+                    </td>
+                    <td>
+                        <a asp-controller="Bike" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary"><i class="bi bi-pencil"></i>&nbsp;  Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Bike" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-secondary"><i class="bi bi-trash"></i>&nbsp; Delete</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Bike" asp-action="Details" asp-route-id="@obj.Id" class="btn btn-secondary"><i class="bi bi-info-circle"></i>&nbsp; Details</a>
+                    </td>
+                    <td>
+                                    <img class="rounded" src="@($"/Bikes/Images/{obj.Id}.jpg")" width="50" height="52">
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

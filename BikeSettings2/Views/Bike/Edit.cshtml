@@ -1,0 +1,67 @@
+﻿@model Bike
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form enctype="multipart/form-data" method="post"> 
+    <div class="border rounded pt-3 mt-4 mx-auto">
+        <div class="row pb-2 mx-auto">
+            <h3 class="">Edit an existing Bike</h3>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="Manufacturer"></label>
+            <input asp-for="Manufacturer" class="form-control"/>
+            <span asp-validation-for="Manufacturer" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="Model"></label>
+            <input asp-for="Model" class="form-control"/>
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="FrontTyrePSI"></label>
+            <input asp-for="FrontTyrePSI" class="form-control"/>
+            <span asp-validation-for="FrontTyrePSI" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="RearTyrePSI"></label>
+            <input asp-for="RearTyrePSI" class="form-control"/>
+            <span asp-validation-for="RearTyrePSI" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="ForkPSI"></label>
+            <input asp-for="ForkPSI" class="form-control"/>
+            <span asp-validation-for="ForkPSI" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="ForkRebound"></label>
+            <input asp-for="ForkRebound" class="form-control"/>
+            <span asp-validation-for="ForkRebound" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="ShockPSI"></label>
+            <input asp-for="ShockPSI" class="form-control"/>
+            <span asp-validation-for="ShockPSI" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="ShockRebound"></label>
+            <input asp-for="ShockRebound" class="form-control"/>
+            <span asp-validation-for="ShockRebound" class="text-danger"></span>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <label asp-for="Image"></label>
+            <input asp-for="Image" type="file"/>
+        </div>
+        <div class="mb-3 px-2 mx-auto">
+            <button type="submit" class="btn btn-primary"> <i class="bi bi-bicycle"></i> &nbsp; Save changes</button>
+            <a asp-controller="Bike" asp-action="Index" method="post" class="btn btn-secondary">Back to List</a> 
+        </div>
+
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

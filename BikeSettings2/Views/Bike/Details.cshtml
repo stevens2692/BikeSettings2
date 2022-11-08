@@ -1,0 +1,109 @@
+﻿@model Bike
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<div class="container">
+    <h2>Details</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered table-striped" style="width:50%">
+                <thead>
+                    <tr>
+                        <th>
+                            Attribute
+                        </th>
+                        <th>
+                            Info
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Manufacturer
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.Manufacturer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Model
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.Model)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Front Tyre PSI
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.FrontTyrePSI)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Rear Tyre PSI
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.RearTyrePSI)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Fork PSI
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.ForkPSI)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Fork rebound
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.ForkRebound)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Shock PSI
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.ShockPSI)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Shock Rebound
+                        </td>
+                        <td>
+                                        @Html.DisplayFor(model => model.ShockRebound)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <img class="rounded img-fluid" src="@($"/Bikes/Images/{Model.Id}.jpg")" >
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<div class="row">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a asp-controller="Bike" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="bi bi-pencil"></i>&nbsp;  Edit</a>
+        <a asp-controller="Bike" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-secondary"><i class="bi bi-trash"></i>&nbsp; Delete</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+
